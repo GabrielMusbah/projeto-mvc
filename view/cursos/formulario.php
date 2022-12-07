@@ -1,9 +1,17 @@
 <?php include __DIR__ . '/../inicio-html.php'; ?>
 
-    <form action='/salvar-curso' method='POST'>
+    <form action='/salvar-curso<?= isset($curso) ? '?id=' . $curso->getId() : ''; ?>' method='POST'>
         <div class="form-group">
+            
             <label for="descricao">Descricao</label>
-            <input type="text" id="descricao" name="descricao" class="form-control">
+            <input 
+            type="text" 
+            id="descricao" 
+            name="descricao" 
+            class="form-control"
+            value="<?php echo (isset($curso) ?  $curso->getDescricao() : ''); ?>"
+            >
+
         </div>
         <button class="btn btn-primary">
             Salvar
@@ -11,3 +19,4 @@
     </form>
 
 <?php include __DIR__ . '/../fim-html.php'; ?>
+

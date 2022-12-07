@@ -8,7 +8,7 @@ $caminho = $_SERVER['PATH_INFO'];
 $rotas = require __DIR__ . '/../config/routes.php';
 
 if(!array_key_exists($caminho, $rotas)){
-    echo 'ERRO 404';
+    http_response_code(404);
     exit();
 }
 
