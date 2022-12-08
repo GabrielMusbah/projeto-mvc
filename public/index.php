@@ -26,3 +26,4 @@ $classeControladora = $rotas[$caminho];
 $controlador = new $classeControladora;
 
 $controlador->processaRequisicao();
+

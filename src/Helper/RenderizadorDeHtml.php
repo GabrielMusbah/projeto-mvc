@@ -1,11 +1,8 @@
 <?php
 
-namespace Alura\Cursos\Controller;
+namespace Alura\Cursos\Helper;
 
-use Alura\Cursos\Infra\EntityManagerCreator;
-use Alura\Cursos\Entity\Curso;
-
-abstract class ControllerComHtml
+trait RenderizadorDeHtml
 {
     public function renderizaHtml(string $caminhoTemplate, array $dados): string
     {
@@ -20,3 +17,4 @@ abstract class ControllerComHtml
         return $html; //devolve o hmtl como string
     }
 }
+
