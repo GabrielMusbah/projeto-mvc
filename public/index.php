@@ -12,6 +12,15 @@ if(!array_key_exists($caminho, $rotas)){
     exit();
 }
 
+session_start();
+
+$ehRotaDeLogin = stripos($caminho, 'login'); //procura a palavra 'login' no $caminho, se nao tiver e false
+
+if(!isset($_SESSION['logado']) && $ehRotaDeLogin === false){
+    header('Location: /login');
+    exit();
+}
+
 $classeControladora = $rotas[$caminho];
 
 $controlador = new $classeControladora;
